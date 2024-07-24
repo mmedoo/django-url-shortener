@@ -14,6 +14,9 @@
 - [📦 Dependencies](#dependencies)
 - [🔧 Configuration](#configuration)
 - [📚 Documentation](#documentation)
+    - [Views](#views)
+    - [📬 API Endpoints](#api)
+    - [Jupyter Notebook](#jupyter-notebook)
 - [❗️ Troubleshooting](#troubleshooting)
 
 
@@ -85,7 +88,8 @@ By default, this project uses SQLite. You can configure other databases (e.g., P
 - **getURL(request, key)**: Retrieves the original URL using the shortened key and renders a template for redirection.
 - **createLink(request)**: Creates a shortened URL key if the URL is valid and stores it in the database if it doesn't already exists, otherwise, it returns the existing URL.
 
-### API Endpoints
+<h3 id="api">📬 API Endpoints</h3>
+
 #### GET `/`
 Home page to shorten URLs.
 
