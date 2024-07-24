@@ -20,6 +20,7 @@
 		}
 	</style>
 </head>
+
 <body>
 	<p>
 		A middleware before going anywhere.
@@ -27,28 +28,29 @@
 	<p id="mess">
 	</p>
 </body>
+
 <script>
 	const display = document.querySelector('#mess');
 	var url = '{{url}}';
-	
+
+	// checks if the url has http or https
 	if (!/^https?:\/\//i.test(url))
-	url = 'http://' + url;
+		url = 'http://' + url;
 	
-	const time = Number('{{seconds}}') * 1000;
+	const delay = Number('{{seconds}}') * 1000;
 	
 	const showSecond = (n) => {
 		display.innerText = `you'll be redirected in ${n}`;
 	}
-	
-	for (let i = 0; i <= time; i++){
+	for (let i = 0; i < delay - 51; i++){
 		setTimeout(() => {
-			showSecond(((time-i)/1000).toFixed(1))
+			showSecond( ( (delay-i)/1000 ).toFixed(1) );
 		}, (i));
 	}
 	
 	setTimeout(() => {
 		window.location.replace(url)
-	} , time)
+	} , delay)
 	
 </script>
 </html>
